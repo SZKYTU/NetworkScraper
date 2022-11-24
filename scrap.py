@@ -1,6 +1,6 @@
 from fractions import Fraction
-from pythonping import ping
 
+from pythonping import ping
 
 IP = ["10.10.0.1","10.10.0.2","10.10.0.13","8.8.8.8"]
 
@@ -19,4 +19,4 @@ def ipCheck():
     return FREEIP, BLOCKIP
 
 
-print(ipCheck())
+# print(ipCheck())

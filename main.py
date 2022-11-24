@@ -1,8 +1,15 @@
-from fastapi import FastAPI
-from scrap import ipCheck
+from flask import Flask
+from flask_restful import Resource, Api
+from scrap import IP
 
-app = FastAPI()
+app = Flask(__name__)
+api = Api(app)
 
-@app.get("/")
-def root():
-    return ipCheck()
+class HelloWorld(Resource):
+    def get(self):
+        return {'hello': f'{IP}'}
+
+api.add_resource(HelloWorld, '/ip')
+
+if __name__ == '__main__':
+    app.run(debug=True)
