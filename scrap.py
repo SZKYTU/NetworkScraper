@@ -1,7 +1,7 @@
 from fractions import Fraction
 from config import IP
 from pythonping import ping
-from dbmodule import update
+from dbmodule import updateStatus
 
 
 def ipCheck():
@@ -10,9 +10,9 @@ def ipCheck():
         string = str(pingComand)
         
         if "out" in string:
-            update(1, ip)
+            updateStatus(1, ip)
         else:
-            update(0, ip)
+            updateStatus(0, ip)
 
 
 print(ipCheck())
