@@ -1,22 +1,18 @@
 from fractions import Fraction
-
+from config import IP
 from pythonping import ping
-
-IP = ["10.10.0.1","10.10.0.2","10.10.0.13","8.8.8.8"]
+from dbmodule import update
 
 
 def ipCheck():
-    FREEIP = []
-    BLOCKIP = []
     for ip in IP:
         pingComand = ping(ip, count=1,verbose=True)
         string = str(pingComand)
         
         if "out" in string:
-            FREEIP.append(ip)
+            update(1, ip)
         else:
-            BLOCKIP.append(ip)
-    return FREEIP, BLOCKIP
+            update(0, ip)
 
 
-# print(ipCheck())
+print(ipCheck())
