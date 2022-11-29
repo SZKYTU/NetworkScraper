@@ -1,13 +1,16 @@
 from flask import Flask
-from flask_restful import Resource, Api
-from scrap import IP
+from flask_restful import Api, Resource, fields, marshal
+
+import json
+from dbmodule import get
 
 app = Flask(__name__)
 api = Api(app)
 
+
 class HelloWorld(Resource):
     def get(self):
-        return {'hello': f'{IP}'}
+        return get()[0][0]
 
 api.add_resource(HelloWorld, '/ip')
 
