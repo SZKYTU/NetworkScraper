@@ -14,5 +14,9 @@ def ipCheck():
         else:
             updateStatus(0, ip)
 
+while True:
+    python = input()
+    print(python)
+
 
 print(ipCheck())

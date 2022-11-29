@@ -8,14 +8,29 @@ def updateStatus(status, ip):
     conn.close()
 
 def get():
-    dbdata = []
+    IP = []
+    HN = []
+    stat = []
     conn = sqlite3.connect("scrap")
     cur = conn.cursor()
-    cur.execute(f"SELECT * FROM SCRAP ")
+    cur.execute(f"SELECT * FROM scrap ")
     rows = cur.fetchall()
     
     for row in rows:
-        dbdata.append(row)
+        # IP.append(row[0])
+        # HN.append(row[1])
+        # stat.append(row[2])
+        IP.append(row)
     
     conn.close()
-    return dbdata
+    # return IP, HN, stat
+    # list = []
+    # list.append(IP)
+    # list.append(HN)
+    # list.append(stat)
+    print(IP)
+    return(IP)
+        
+
+
+get()
