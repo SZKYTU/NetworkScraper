@@ -1,14 +1,8 @@
 from flask import Flask
 from flask_restful import Api, Resource, fields, marshal_with
 
-import json
 from dbmodule import get
 
-resource_fields = {
-    'IP': fields.String,
-    'HN': fields.String,
-    'status': fields.Integer,
-}
 
 data = get()
 
@@ -16,12 +10,16 @@ data = get()
 app = Flask(__name__)
 api = Api(app)
 
-class HelloWorld(Resource):
-    @marshal_with(resource_fields, envelope='resource')
+class Main(Resource):
     def get(self):
-        json.dumps(get()[0])
+        data = {
+            "IP" : get()[0][0],
+            "HN" : get()[0][1],
+            "status" : get()[0][2]
+        }
+        return data
 
-api.add_resource(HelloWorld,  '/ip')
+api.add_resource(Main,  '/ip')
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")
