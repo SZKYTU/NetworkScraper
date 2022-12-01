@@ -3,7 +3,6 @@ from flask_restful import Api, Resource, fields, marshal_with
 
 from dbmodule import get
 
-
 data = get()
 
 
@@ -12,12 +11,7 @@ api = Api(app)
 
 class Main(Resource):
     def get(self):
-        data = {
-            "IP" : get()[0][0],
-            "HN" : get()[0][1],
-            "status" : get()[0][2]
-        }
-        return data
+        return get()
 
 api.add_resource(Main,  '/ip')
 
