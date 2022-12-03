@@ -1,6 +1,8 @@
 from fractions import Fraction
-from config import IP
+
 from pythonping import ping
+
+from config import IP
 from dbmodule import updateStatus
 
 
