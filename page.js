@@ -1,5 +1,3 @@
-
-
 const api_url =
     "http://127.0.0.1:5000/ip";
 
@@ -30,19 +28,18 @@ function hideloader() {
 //     document.getElementById('loading').style.display = 'none';
 // }
 
-function show(data) {
-    let tab =
-        `<tr>
-          <th>ip</th>
-          <th>hostname</th>
-         </tr>`;
-
-    for (let r of freeip.list) {
-        tab += `<tr> 
-    <td>${r.ip} </td>
-    <td>${r.hn}</td>
+const tab =
+`<tr>
+<th>ip</th>
+<th>hostname</th>
 </tr>`;
-    }
 
-console.log(freeip);
-document.getElementById("test").innerHTML = tab;}
+// for (const r of freeip[0]) {
+//     console.log("w"+r);
+//     tab += `<tr> 
+//     <td>${r.ip} </td>
+//     <td>${r.hn}</td>
+// </tr>`;
+//     }
+console.log(freeip.map(a => a.foo));
+// document.getElementById("test").innerHTML = freeip(1);
