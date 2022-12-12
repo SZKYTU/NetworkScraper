@@ -1,5 +1,5 @@
 const api_url =
-"http://127.0.0.1:5000/ip";
+"http://127.0.0.1:8000/ip";
 
 const freeip = [];
 const blockip = [];
@@ -24,7 +24,7 @@ const render = (IP, table) => {
 
     IP.forEach(element => {
         const row = document.createElement("tr");
-        row.innerHTML = `<td>${element[0]}</td><td>${element[1]}</td>`;
+        row.innerHTML = `<td>${element[0]}</td> -> <td>${element[1]}</td>`;
         table.appendChild(row)
     });
 }
