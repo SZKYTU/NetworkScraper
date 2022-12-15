@@ -1,5 +1,3 @@
-from fractions import Fraction
-
 from pythonping import ping
 
 from config import IP

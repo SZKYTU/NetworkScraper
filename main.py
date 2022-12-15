@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_restful import Api, Resource, fields, marshal_with
+from flask_restful import Api, Resource
 from flask_cors import CORS
 
 from dbmodule import get
@@ -17,4 +17,4 @@ class Main(Resource):
 api.add_resource(Main,  '/ip')
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8000, host="0.0.0.0")
+    app.run(port=5000, host="0.0.0.0")

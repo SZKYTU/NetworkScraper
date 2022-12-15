@@ -1,7 +1,7 @@
 import sqlite3
 
 
-def updateStatus(status, ip):
+def updateStatus(status, ip, hostName):
     conn = sqlite3.connect("scrap")
     conn.execute(f"UPDATE scrap SET status = '{status}' WHERE ip='{ip}'")
     conn.commit()

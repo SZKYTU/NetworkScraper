@@ -1,5 +1,5 @@
 const api_url =
-"http://127.0.0.1:8000/ip";
+"http://10.10.4.232:5000/ip";
 
 const freeip = [];
 const blockip = [];
