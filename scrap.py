@@ -1,12 +1,10 @@
 from pythonping import ping
 
-# from config import IP
+from config import IP
 from dbmodule import updateStatus
 
 import os
 
-IP = ["10.10.80.71", 
-    "10.10.80.72"]
 
 def ipCheck():
     for ip in IP:
@@ -18,11 +16,11 @@ def ipCheck():
         else:
             updateStatus(0, ip)
 
-def HNCheck():
-    for ip in IP:
-        askDomain = os.system(f'cmd /k "nbtstat -a {ip}"')
-        print(askDomain)
+# def HNCheck():
+#     for ip in IP:
+#         askDomain = os.system(f'cmd /k "nbtstat -a {ip}"')
+#         print(askDomain)
 
 
 
-# ipCheck()
+ipCheck()
