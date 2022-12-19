@@ -1,0 +1,10 @@
+
+.free {
+    float: left;
+    width: 40%;
+    border-right: 1px dashed black;
+}
+.block {
+    float: right;
+    width: 50%;
+}
